@@ -1,49 +1,24 @@
-import prompt
 import random
 
-game_rule = 'Answer "yes" if the number is even, otherwise answer "no".'
-success_message = 'Congratulations, <user_name>!'
-error_message = "'<answer>' is wrong answer ;(. " \
-                "Correct answer was '<correct_answer>'.\n" \
-                "Let's try again, <user_name>!"
+from brain_games.game_engine import engine
 
 
-def welcome_user():
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
+game_task = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def is_even(num):
     return num % 2 == 0
 
 
-def run_game():
-    user_name = welcome_user()
-    print(game_rule)
-    answers_count = 0
-    while answers_count < 3:
-        num = random.randint(1, 50)
-        correct_answer = 'yes' if is_even(num) else 'no'
-        print(f'Question: {num}')
-        answer = prompt.string('Your answer: ')
-        if correct_answer == answer:
-            print('Correct!')
-            answers_count += 1
-        else:
-            error_msg = error_message\
-                .replace('<answer>', answer)\
-                .replace('<correct_answer>', correct_answer)\
-                .replace('<user_name>', user_name)
-            print(error_msg)
-            break
-        if answers_count == 3:
-            print(success_message.replace('<user_name>', user_name))
+def get_round_data():
+    num = random.randint(1, 50)
+    question = f'Question: {num}'
+    correct_answer = 'yes' if is_even(num) else 'no'
+    return question, correct_answer
 
 
 def main():
-    run_game()
+    engine(game_task, get_round_data)
 
 
 if __name__ == '__main__':

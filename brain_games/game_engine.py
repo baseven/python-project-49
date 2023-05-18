@@ -15,12 +15,12 @@ def welcome_user():
     return name
 
 
-def engine(game_task, get_round_data):
+def engine(game_task, get_data_for_round):
     user_name = welcome_user()
     print(game_task)
     round_count = 0
     while round_count < rounds_number:
-        question, correct_answer = get_round_data()
+        question, correct_answer = get_data_for_round()
         print(question)
         answer = prompt.string('Your answer: ')
         if correct_answer == answer:

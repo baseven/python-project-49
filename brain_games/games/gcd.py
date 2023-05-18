@@ -7,7 +7,7 @@ from brain_games.game_engine import engine
 game_task = 'Find the greatest common divisor of given numbers.'
 
 
-def get_round_data():
+def get_data_for_round():
     num1 = random.randint(0, 10)
     num2 = random.randint(0, 10)
     question = f'Question: {num1} {num2}'
@@ -16,4 +16,4 @@ def get_round_data():
 
 
 def run_game():
-    engine(game_task, get_round_data)
+    engine(game_task, get_data_for_round)

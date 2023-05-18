@@ -15,7 +15,7 @@ def is_prime(num):
     return True
 
 
-def get_round_data():
+def get_data_for_round():
     num = random.randint(1, 50)
     question = f'Question: {num}'
     correct_answer = 'yes' if is_prime(num) else 'no'
@@ -23,4 +23,4 @@ def get_round_data():
 
 
 def run_game():
-    engine(game_task, get_round_data)
+    engine(game_task, get_data_for_round)

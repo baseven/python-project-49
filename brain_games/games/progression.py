@@ -23,11 +23,11 @@ def gen_progression():
     return correct_answer, progression
 
 
-def get_round_data():
+def get_data_for_round():
     correct_answer, progression = gen_progression()
     question = f'Question: {" ".join(progression)}'
     return question, str(correct_answer)
 
 
 def run_game():
-    engine(game_task, get_round_data)
+    engine(game_task, get_data_for_round)

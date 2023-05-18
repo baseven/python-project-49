@@ -10,7 +10,7 @@ def is_even(num):
     return num % 2 == 0
 
 
-def get_round_data():
+def get_data_for_round():
     num = random.randint(1, 50)
     question = f'Question: {num}'
     correct_answer = 'yes' if is_even(num) else 'no'
@@ -18,4 +18,4 @@ def get_round_data():
 
 
 def run_game():
-    engine(game_task, get_round_data)
+    engine(game_task, get_data_for_round)

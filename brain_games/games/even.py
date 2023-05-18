@@ -1,13 +1,10 @@
 import random
 
 from brain_games.game_engine import engine
+from brain_games.utils import is_even
 
 
 game_task = 'Answer "yes" if the number is even, otherwise answer "no".'
-
-
-def is_even(num):
-    return num % 2 == 0
 
 
 def get_data_for_round():

@@ -1,24 +1,10 @@
 import random
 
 from brain_games.game_engine import engine
+from brain_games.utils import operations
 
 
 game_task = 'What is the result of the expression?'
-
-
-def add(num1, num2):
-    return num1 + num2
-
-
-def subtract(num1, num2):
-    return num1 - num2
-
-
-def multiply(num1, num2):
-    return num1 * num2
-
-
-operations = [(add, '+'), (subtract, '-'), (multiply, '*')]
 
 
 def get_data_for_round():

@@ -32,6 +32,5 @@ def engine(game_task, get_round_data):
                 .replace('<correct_answer>', correct_answer)\
                 .replace('<user_name>', user_name)
             print(error_msg)
-            break
-        if round_count == rounds_number:
-            print(success_message.replace('<user_name>', user_name))
+            return
+    print(success_message.replace('<user_name>', user_name))

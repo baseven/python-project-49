@@ -8,7 +8,7 @@ game_task = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_data_for_round():
-    num = random.randint(1, 50)
+    num = random.randint(0, 50)
     question = f'Question: {num}'
     correct_answer = 'yes' if is_even(num) else 'no'
     return question, correct_answer

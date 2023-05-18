@@ -1,6 +1,3 @@
-import random
-
-
 def add(num1, num2):
     return num1 + num2
 
@@ -29,18 +26,18 @@ def is_prime(num):
     return True
 
 
-def get_progression_data():
-    first_element = random.randint(0, 10)
-    progression_difference = random.randint(1, 10)
-    length = random.randint(5, 10)
-    hidden_element_index = random.randint(0, length - 1)
-    hidden_element_symbol = '..'
+def gen_progression(start, step, length):
     progression = []
     elements_count = 0
     while elements_count < length:
-        element = first_element + progression_difference * elements_count
+        element = start + step * elements_count
         progression.append(str(element))
         elements_count += 1
-    correct_answer = progression[hidden_element_index]
-    progression[hidden_element_index] = hidden_element_symbol
-    return correct_answer, progression
+    return progression
+
+
+def get_progression_data(start, step, length, missing_index, symbol='..'):
+    progression = gen_progression(start, step, length)
+    missing_element = progression[missing_index]
+    progression[missing_index] = symbol
+    return missing_element, progression

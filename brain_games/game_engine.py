@@ -5,7 +5,7 @@ error_message = "'<answer>' is wrong answer ;(. " \
                 "Correct answer was '<correct_answer>'.\n" \
                 "Let's try again, <user_name>!"
 
-rounds_number = 3
+ROUNDS_NUMBER = 3
 
 
 def welcome_user():
@@ -19,7 +19,7 @@ def engine(game_task, get_data_for_round):
     user_name = welcome_user()
     print(game_task)
     round_count = 0
-    while round_count < rounds_number:
+    while round_count < ROUNDS_NUMBER:
         question, correct_answer = get_data_for_round()
         print(question)
         answer = prompt.string('Your answer: ')

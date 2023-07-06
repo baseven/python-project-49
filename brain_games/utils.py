@@ -1,16 +1,7 @@
-def add(num1, num2):
-    return num1 + num2
+from operator import add, sub, mul
 
 
-def subtract(num1, num2):
-    return num1 - num2
-
-
-def multiply(num1, num2):
-    return num1 * num2
-
-
-operations = [(add, '+'), (subtract, '-'), (multiply, '*')]
+math_operators = [(add, '+'), (sub, '-'), (mul, '*')]
 
 
 def is_even(num):
